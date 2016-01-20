@@ -44,7 +44,7 @@ endef
 
 define Package/malamute/install
 	$(INSTALL_DIR) $(1)/usr/bin
-	$(CP) $(PKG_BUILD_DIR)/src/.libs/{malamute,mshell,mlm_perftest,mlm_selftest,mlm_tutorial} $(1)/usr/bin/
+	$(CP) $(PKG_BUILD_DIR)/src/.libs/{malamute,mshell} $(1)/usr/bin/
 endef
 
 $(eval $(call BuildPackage,malamute))

@@ -43,13 +43,10 @@ define Build/Compile
 	$(call Build/Compile/Default, -C $(PKG_BUILD_DIR) )
 endef
 
-#define Build/Install
-#	$(call Build/Install/Default, install -C $(PKG_BUILD_DIR)/C )
-#endef
-
 define Build/InstallDev
 	$(INSTALL_DIR) $(1)/usr/lib $(1)/usr/include $(1)/usr/lib/pkgconfig
 	$(CP) $(PKG_INSTALL_DIR)/usr/lib/* $(1)/usr/lib/
+	$(CP) $(PKG_INSTALL_DIR)/usr/include/* $(1)/usr/include/
 	$(CP) $(PKG_INSTALL_DIR)/usr/lib/pkgconfig $(1)/usr/lib/
 endef
 

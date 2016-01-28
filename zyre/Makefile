@@ -11,7 +11,7 @@ include $(TOPDIR)/rules.mk
 PKG_NAME:=zyre
 PKG_VERSION:=master
 PKG_SOURCE_PROTO:=git
-PKG_SOURCE_URL:=https://github.com/zeromq/zyre.git
+PKG_SOURCE_URL:=https://github.com/zoobab/zyre.git
 PKG_SOURCE:=$(PKG_NAME).tar.gz
 PKG_SOURCE_VERSION:=HEAD
 PKG_SOURCE_SUBDIR:=$(PKG_NAME)

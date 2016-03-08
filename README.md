@@ -9,4 +9,4 @@ Enables you to select the packages in the menuconfig and build them appropriatel
  * czmq == libczmq.git
  * zyre == zyre.git
 
-DeMidi is one example application which depends on those 3 libraries.
+DeMidi and Glard are example applications which depends on those 3 libraries.

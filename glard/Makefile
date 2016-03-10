@@ -2,11 +2,11 @@
 # Authors: Benjamin Henrion <zoobab@gmail.com>
 include $(TOPDIR)/rules.mk
 
-PKG_NAME:=blink
+PKG_NAME:=glard
 PKG_VERSION:=101
 
 PKG_SOURCE_PROTO:=git
-PKG_SOURCE_URL:=https://github.com/CodeJockey/blink.git
+PKG_SOURCE_URL:=https://github.com/CodeJockey/glar150.git
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION)-$(PKG_SOURCE_VERSION).tar.gz
 PKG_SOURCE_SUBDIR:=$(PKG_NAME)-$(PKG_VERSION)
 PKG_SOURCE_VERSION:=ac3887b897d4d041696cb1548cc2ca384f380f16
@@ -17,16 +17,16 @@ PKG_INSTALL:=1
 
 include $(INCLUDE_DIR)/package.mk
 
-define Package/blink
+define Package/glard
     MAINTAINER:=zoobab@gmail.com
-    TITLE:=blink
-    SECTION:=libs
+    TITLE:=glard
+    SECTION:=network
     DEPENDS:=+zyre +screen
-    CATEGORY:=Libraries
+    CATEGORY:=Network
 endef
 
-define Package/blink/description
-	blink demo
+define Package/glard/description
+	GL-AR150 demo application
 endef
 
 define Build/Configure
@@ -38,7 +38,7 @@ define Build/Compile
 	$(call Build/Compile/Default, -C $(PKG_BUILD_DIR) )
 endef
 
-define Package/blink/install
+define Package/glard/install
 	$(INSTALL_DIR) $(1)/usr/lib
 	$(CP) $(PKG_BUILD_DIR)/src/.libs/libglar* $(1)/usr/lib
 
@@ -53,4 +53,4 @@ define Package/blink/install
 	$(CP) $(PKG_BUILD_DIR)/src/rc.local $(1)/etc
 endef
 
-$(eval $(call BuildPackage,blink))
+$(eval $(call BuildPackage,glard))

@@ -8,15 +8,14 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=czmq
-PKG_VERSION:=master
+PKG_VERSION:=c1b1284
 PKG_SOURCE_PROTO:=git
-PKG_SOURCE_URL:=https://github.com/zeromq/czmq.git
+PKG_SOURCE_URL:=https://github.com/hintjens/czmq.git
 PKG_SOURCE:=$(PKG_NAME).tar.gz
-PKG_SOURCE_VERSION:=HEAD
+PKG_SOURCE_VERSION:=c1b1284166aac47ce9ebcfb257760b044a0f1245
 PKG_SOURCE_SUBDIR:=$(PKG_NAME)
-
 PKG_BUILD_DIR:=$(BUILD_DIR)/$(PKG_NAME)
-
+PKG_BUILD_PARALLEL:=1
 PKG_INSTALL:=1
 
 include $(INCLUDE_DIR)/package.mk
@@ -25,7 +24,7 @@ define Package/czmq
     MAINTAINER:=zoobab@gmail.com
     TITLE:=czmq
     SECTION:=libs
-    DEPENDS:=+zeromq libuuid
+    DEPENDS:=+zeromq
     CATEGORY:=Libraries
 endef
 
@@ -57,7 +56,7 @@ endef
 
 define Package/czmq/install
 	$(INSTALL_DIR) $(1)/usr/lib 
-	$(CP) $(PKG_INSTALL_DIR)/usr/lib/libczmq.so* $(1)/usr/lib/
+	$(CP) $(PKG_BUILD_DIR)/src/.libs/libczmq.so* $(1)/usr/lib/
 
 endef
 

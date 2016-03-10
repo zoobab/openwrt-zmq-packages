@@ -9,11 +9,11 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=zyre
-PKG_VERSION:=master
+PKG_VERSION:=3d52b3a
 PKG_SOURCE_PROTO:=git
-PKG_SOURCE_URL:=https://github.com/zoobab/zyre.git
+PKG_SOURCE_URL:=https://github.com/zeromq/zyre.git
 PKG_SOURCE:=$(PKG_NAME).tar.gz
-PKG_SOURCE_VERSION:=HEAD
+PKG_SOURCE_VERSION:=3d52b3a0923f4298e6bc8124837993a4773adeb2
 PKG_SOURCE_SUBDIR:=$(PKG_NAME)
 
 PKG_BUILD_DIR:=$(BUILD_DIR)/$(PKG_NAME)
@@ -26,7 +26,7 @@ define Package/zyre
     MAINTAINER:=zoobab@gmail.com
     TITLE:=zyre
     SECTION:=libs
-    DEPENDS:=+libuuid +czmq
+    DEPENDS:=+czmq
     CATEGORY:=Libraries
 endef
 
@@ -46,7 +46,7 @@ endef
 define Build/InstallDev
 	$(INSTALL_DIR) $(1)/usr/lib $(1)/usr/include $(1)/usr/lib/pkgconfig
 	$(CP) $(PKG_INSTALL_DIR)/usr/lib/* $(1)/usr/lib/
-	$(CP) $(PKG_INSTALL_DIR)/usr/include/* $(1)/usr/include/
+	$(CP) $(PKG_BUILD_DIR)/include/* $(1)/usr/include/
 	$(CP) $(PKG_INSTALL_DIR)/usr/lib/pkgconfig $(1)/usr/lib/
 endef
 

@@ -10,24 +10,23 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=zeromq
-PKG_VERSION:=master
+PKG_VERSION:=ec62097
 PKG_SOURCE_PROTO:=git
 PKG_SOURCE_URL:=https://github.com/zeromq/libzmq.git
 PKG_SOURCE:=$(PKG_NAME).tar.gz
-PKG_SOURCE_VERSION:=HEAD
+PKG_SOURCE_VERSION:=ec6209737e738d4d0be60685760982897e1b8f1b
 PKG_SOURCE_SUBDIR:=$(PKG_NAME)
-
 PKG_BUILD_DIR:=$(BUILD_DIR)/$(PKG_NAME)
-
+PKG_BUILD_PARALLEL:=1
 PKG_INSTALL:=1
 
 include $(INCLUDE_DIR)/package.mk
 
 define Package/zeromq
-    MAINTAINER:=victor@iso3103.net
+    MAINTAINER:=zoobab@gmail.com
     TITLE:=zeromq
     SECTION:=libs
-    DEPENDS:=+libstdcpp +libpthread +librt +libsodium
+    DEPENDS:=+libstdcpp +libpthread +librt
     CATEGORY:=Libraries
     URL:=http://www.zeromq.org/
 endef

@@ -18,11 +18,11 @@ PKG_INSTALL:=1
 include $(INCLUDE_DIR)/package.mk
 
 define Package/glard
-    MAINTAINER:=zoobab@gmail.com
     TITLE:=glard
-    SECTION:=network
-    DEPENDS:=+zyre +screen
+    MAINTAINER:=zoobab@gmail.com
+    SECTION:=net
     CATEGORY:=Network
+    DEPENDS:=+zyre +screen
 endef
 
 define Package/glard/description

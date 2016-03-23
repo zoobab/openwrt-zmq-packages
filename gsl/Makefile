@@ -26,7 +26,8 @@ define Package/gsl
     MAINTAINER:=zoobab@gmail.com
     TITLE:=gsl
     SECTION:=lang
-    CATEGORY:=Lang
+    SUBMENU:=Javascript
+    CATEGORY:=Languages
 endef
 
 define Package/gsl/description

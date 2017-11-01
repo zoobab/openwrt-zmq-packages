@@ -6,10 +6,10 @@ PKG_NAME:=glard
 PKG_VERSION:=101
 
 PKG_SOURCE_PROTO:=git
-PKG_SOURCE_URL:=https://github.com/CodeJockey/glar150.git
+PKG_SOURCE_URL:=https://github.com/ZMQers/glar150.git
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION)-$(PKG_SOURCE_VERSION).tar.gz
 PKG_SOURCE_SUBDIR:=$(PKG_NAME)-$(PKG_VERSION)
-PKG_SOURCE_VERSION:=ac3887b897d4d041696cb1548cc2ca384f380f16
+PKG_SOURCE_VERSION:=0f1158feec86393f247a63526bda085b291bb89d
 
 PKG_RELEASE=$(PKG_SOURCE_VERSION)
 
@@ -22,11 +22,11 @@ define Package/glard
     MAINTAINER:=zoobab@gmail.com
     SECTION:=net
     CATEGORY:=Network
-    DEPENDS:=+zyre +screen
+    DEPENDS:=+zyre
 endef
 
 define Package/glard/description
-	GL-AR150 demo application
+	Glard, a shell to administrate your zyre cluster
 endef
 
 define Build/Configure
